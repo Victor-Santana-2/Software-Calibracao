@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calibração</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Calibração</h1>
+	
+	<!-- Seção de configuração -->
+	<section id="config">
+		<h2>Configuração</h2>
+		<form>
+			<label for="unit">Unidade:</label>
+			<select id="unit" name="unit">
+				<option value="ton">Tonelada (t)</option>
+				<option value="kg">Quilograma (kg)</option>
+				<option value="grm">Gramas (g)</option>
+			</select>
+			
+			<label for="precision">Precisão:</label>
+			<select id="precision" name="precision">
+				<option value="0.1">0.1</option>
+				<option value="0.01">0.01</option>
+				<option value="0.001">0.001</option>
+			</select>
+			
+			<button type="submit">Salvar Configuração</button>
+		</form>
+	</section>
+	
+	<!-- Seção de calibração -->
+	<section id="calibration">
+		<h2>Calibração</h2>
+		<table id="calibration-table">
+			<thead>
+				<tr>
+					<th>Valor Real</th>
+					<th>Valor Medido</th>
+					<th>Diferença</th>
+				</tr>
+			</thead>
+			<tbody id="calibration-data">
+				<!-- Dados de calibração serão adicionados aqui -->
+			</tbody>
+		</table>
+		
+		<button id="add-data">Adicionar Dado</button>
+		<button id="calculate">Calcular Calibração</button>
+	</section>
+	
+	<!-- Seção de resultados -->
+	<section id="results">
+		<h2>Resultados</h2>
+		<p id="uncertainty-result">Incerteza: <span id="uncertainty-value"></span></p>
+		<p id="calibration-result">Calibração: <span id="calibration-value"></span></p>
+	</section>
+	
+	<script src="script.js"></script>
+</body>
+</html>
