@@ -1,49 +1,54 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f0f0f0;
-  }
-  
-  #calibration-table {
-    margin-bottom: 20px;
-  }
-  
-  #add-data, #calculate {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  #add-data:hover, #calculate:hover {
-    background-color: #f0f0f0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f7f7f7; /* adicionado um tom de verde claro ao fundo */
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #c6efce; /* adicionado um tom de verde pastel ao fundo das seções */
+}
+
+h2 {
+  margin-top: 0;
+  color: #2e865f; /* adicionado um tom de verde escuro ao título */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  background-color: #f7f7f7; /* adicionado um tom de verde claro ao fundo das células */
+}
+
+th {
+  background-color: #8bc34a; /* adicionado um tom de verde médio ao fundo das células de título */
+}
+
+#calibration-table {
+  margin-bottom: 20px;
+}
+
+#add-data, #calculate {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #4caf50; /* adicionado um tom de verde claro aos botões */
+}
+
+#add-data:hover, #calculate:hover {
+  background-color: #3e8e41; /* adicionado um tom de verde escuro aos botões ao passar o mouse */
+}

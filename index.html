@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calibração</title>
+	<title>API Calibration</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Calibração</h1>
+	<h1>Calibração de Balanças</h1>
 	
 	<!-- Seção de configuração -->
 	<section id="config">
-		<h2>Configuração</h2>
+		<h2>Configuração da Balança</h2>
 		<form>
 			<label for="unit">Unidade:</label>
 			<select id="unit" name="unit">
@@ -18,7 +18,7 @@
 				<option value="grm">Gramas (g)</option>
 			</select>
 			
-			<label for="precision">Precisão:</label>
+			<label for="precision">Resolução:</label>
 			<select id="precision" name="precision">
 				<option value="0.1">0.1</option>
 				<option value="0.01">0.01</option>
@@ -35,9 +35,9 @@
 		<table id="calibration-table">
 			<thead>
 				<tr>
-					<th>Valor Real</th>
-					<th>Valor Medido</th>
-					<th>Diferença</th>
+					<th> Valor  de Referencia</th>
+					<th> Valor Medido </th>
+					<th> Diferença </th>
 				</tr>
 			</thead>
 			<tbody id="calibration-data">
@@ -52,8 +52,9 @@
 	<!-- Seção de resultados -->
 	<section id="results">
 		<h2>Resultados</h2>
-		<p id="uncertainty-result">Incerteza: <span id="uncertainty-value"></span></p>
-		<p id="calibration-result">Calibração: <span id="calibration-value"></span></p>
+		<p id="desvpad-result">Desvio Padrão: <span id="desvpad-value"></span></p>
+		<p id="calibration-result">Média da Calibração: <span id="calibration-value"></span></p>
+		<p id="uncertainty-result">Incerteza da Calibração: <span id="uncertainty-value"></span></p>
 	</section>
 	
 	<script src="script.js"></script>

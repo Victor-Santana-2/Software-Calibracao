@@ -1,6 +1,6 @@
 // script.js
 
-let unit = 'm';
+let unit = 'g';
 let precision = 0.01;
 let calibrationData = [];
 
@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const calculateButton = document.getElementById('calculate');
   const resultsSection = document.getElementById('results');
   const calibrationResultElement = document.getElementById('calibration-value');
-  const uncertaintyResultElement = document.getElementById('uncertainty-value');
+  const uncertaintyResultElement = document.getElementById('desvpad-value');
+  const incertezaResultElement = document.getElementById('uncertainty-value');
 
   configForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -43,10 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const meanDifference = calibrationData.reduce((acc, current) => acc + current.difference, 0) / calibrationData.length;
     const calibrationResult = meanDifference;
-    const uncertainty = calculateCalibration(calibrationData);
+    const { desvpad, uncertainty } = calculateCalibration(calibrationData);
 
     calibrationResultElement.textContent = calibrationResult.toFixed(2);
-    uncertaintyResultElement.textContent = uncertainty.toFixed(2);
+    uncertaintyResultElement.textContent = desvpad.toFixed(2);
+    incertezaResultElement.textContent = uncertainty.toFixed(2);
   });
 });
 
@@ -60,8 +62,12 @@ function calculateCalibration(data) {
     return acc + diff * diff;
   }, 0);
 
-  // Calcular a incerteza (desvio padrão)
-  const uncertainty = Math.sqrt(sumSquares / (data.length - 1));
+  // Calcular o desvio padrão
+  const desvpad = Math.sqrt(sumSquares / (data.length - 1));
 
-  return uncertainty;
+  // Calcular a incerteza (uncertainty)
+  const uncertainty = desvpad / Math.sqrt(data.length);
+
+  // Return both values
+  return { desvpad, uncertainty };
 }
